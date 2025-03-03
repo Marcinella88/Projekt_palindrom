@@ -1,22 +1,12 @@
-# Zadanie polindrom
+# Zadanie palindrom
 
-def czy_polindrom(word):
-    Indeks_and_letter = list(enumerate(word))
+def czy_palindrom(word):
+    inverted = word[::-1]
+    palidrom = word.lower() == inverted.lower()
 
-    def indeks_1(Indeks_and_letter):
-        return Indeks_and_letter[0]
-
-    sorted_word = sorted(Indeks_and_letter, key=indeks_1,reverse=True)
-
-    new_word=""
-    for _, letter in sorted_word:
-        new_word += letter
-
-    polidrom =  new_word.lower() == word.lower()
-
-    if polidrom:
+    if palidrom:
         print(f"Słowo: {word} to palindrom!")
     else:
         print(f"Słowo: {word} nie jest palindromem.")
 
-czy_polindrom('Kajak') # Tu wpisz słowo, aby sprawdzić czy to polindrom.
+czy_palindrom('Anna') # Tu wpisz słowo, aby sprawdzić czy to palindrom.
